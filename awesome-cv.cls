@@ -76,35 +76,14 @@
 % Needed to manage math fonts
 \RequirePackage{unicode-math}
 % Needed to use icons from font-awesome
-\RequirePackage{fontawesome6}
+\RequirePackage{fontawesome5}
 \RequirePackage{accsupp}
 \defaultfontfeatures{
-  Renderer=HarfBuzz,
+  % Renderer=HarfBuzz,
 }
-\setmainfont{Source Sans 3}[
-  UprightFont=*,
-  ItalicFont=* Italic,
-  BoldFont=* Bold,
-  BoldItalicFont=* Bold Italic,
-  FontFace={l}{n}{Font=* Light},
-  FontFace={l}{it}{Font=* Light Italic},
-]
-\setsansfont{Source Sans 3}[
-  UprightFont=*,
-  ItalicFont=* Italic,
-  BoldFont=* Bold,
-  BoldItalicFont=* Bold Italic,
-  FontFace={l}{n}{Font=* Light},
-  FontFace={l}{it}{Font=* Light Italic},
-]
-\newfontfamily\roboto{Roboto}[
-  UprightFont=*,
-  ItalicFont=* Italic,
-  BoldFont=* Bold,
-  BoldItalicFont=* Bold Italic,
-  FontFace={l}{n}{Font=* Light},
-  FontFace={l}{it}{Font=* Light Italic},
-]
+\setmainfont{Helvetica}
+\setsansfont{Helvetica}
+\newfontfamily\roboto{Helvetica}
 % Needed for the photo ID
 \RequirePackage[skins]{tcolorbox}
 % Needed to deal a paragraphs
@@ -685,7 +664,7 @@
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \@extrainfo%
         }%
-    } \\[\acvHeaderAfterSocialSkip]%
+    } \mbox{}\\[\acvHeaderAfterSocialSkip]%
     \ifthenelse{\isundefined{\@quote}}%
       {}%
       {\headerquotestyle{\@quote\\}\vspace{\acvHeaderAfterQuoteSkip}}%
@@ -804,7 +783,7 @@
   \vspace{-2.0mm}
     \setlength\tabcolsep{1ex}
     \setlength{\extrarowheight}{0pt}
-    \tabularx{\textwidth}{r>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X}
+    \tabularx{\textwidth}{l>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}X}
 }{%
 \endtabularx\par
 }
